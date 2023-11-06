@@ -5,6 +5,6 @@
 
 import Foundation
 
-struct UsernameAvailable: Codable {
-    var isAvailable: Bool
+public struct UsernameAvailable: Codable {
+    public var isAvailable: Bool
 }
