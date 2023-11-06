@@ -7,4 +7,8 @@ import Foundation
 
 public struct UsernameAvailable: Codable {
     public var isAvailable: Bool
+    
+    public init(isAvailable: Bool) {
+        self.isAvailable = isAvailable
+    }
 }
