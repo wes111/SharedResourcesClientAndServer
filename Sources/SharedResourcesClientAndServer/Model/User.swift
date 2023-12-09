@@ -8,23 +8,23 @@
 import Foundation
 import Appwrite
 
-struct User: Codable, Identifiable {
-    let accessedAt: Date?
-    let createdAt: Date?
-    let email: String
-    let emailVerification: Bool
-    let id: String
-    let labels: [String]
-    let name: String
-    let passwordUpdate: Date?
-    let phone: String
-    let phoneVerification: Bool
-    let prefs: [String] // TODO: ...
-    let registration: Date?
-    let status: Bool
-    let updatedAt: Date?
+public struct User: Codable, Identifiable {
+    public let accessedAt: Date?
+    public let createdAt: Date?
+    public let email: String
+    public let emailVerification: Bool
+    public let id: String
+    public let labels: [String]
+    public let name: String
+    public let passwordUpdate: Date?
+    public let phone: String
+    public let phoneVerification: Bool
+    public let prefs: [String] // TODO: ...
+    public let registration: Date?
+    public let status: Bool
+    public let updatedAt: Date?
     
-    init(
+    public init(
         accessedAt: Date?,
         createdAt: Date?,
         email: String,
@@ -57,7 +57,7 @@ struct User: Codable, Identifiable {
     }
 }
 
-extension Appwrite.User {
+public extension Appwrite.User {
     
     func toUser() -> User {
         let formatter = ISO8601DateFormatter.sharedWithFractionalSeconds
