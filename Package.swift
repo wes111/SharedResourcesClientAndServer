@@ -16,7 +16,6 @@ let package = Package(
             targets: ["SharedResourcesClientAndServer"]),
     ], 
     dependencies: [
-        .package(url: "git@github.com:appwrite/sdk-for-apple.git", from: "4.0.2")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -24,7 +23,6 @@ let package = Package(
         .target(
             name: "SharedResourcesClientAndServer",
             dependencies: [
-                .product(name: "Appwrite", package: "sdk-for-apple")
             ]
         )
     ]
