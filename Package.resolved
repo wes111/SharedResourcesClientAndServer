@@ -10,12 +10,12 @@
       }
     },
     {
-      "identity" : "sdk-for-swift",
+      "identity" : "sdk-for-apple",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/appwrite/sdk-for-swift",
+      "location" : "git@github.com:appwrite/sdk-for-apple.git",
       "state" : {
-        "revision" : "d1c25a9242355c3bcebf17c5187aad46389692d1",
-        "version" : "4.1.0"
+        "revision" : "d19fb1f26cb0c64a36e96c83a54b631336cfc5b5",
+        "version" : "4.0.2"
       }
     },
     {
