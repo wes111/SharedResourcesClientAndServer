@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension ISO8601DateFormatter {
+public extension ISO8601DateFormatter {
     static let sharedWithFractionalSeconds: ISO8601DateFormatter = {
         let formatter = ISO8601DateFormatter()
         formatter.formatOptions = [.withFractionalSeconds, .withInternetDateTime]
