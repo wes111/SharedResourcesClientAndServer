@@ -8,7 +8,7 @@
 import Foundation
 
 // Required by Appwrite to be unique for each account.
-public enum UniqueAccountField {
+public enum UniqueAccountField: Codable {
     case username, email, phone
     
     public var queryName: String {
