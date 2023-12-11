@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct UniqueAccountFieldRequest {
+public struct UniqueAccountFieldRequest: Codable {
     public var field: UniqueAccountField
     public var value: String
     
