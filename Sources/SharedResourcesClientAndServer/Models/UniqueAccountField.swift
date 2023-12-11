@@ -14,11 +14,11 @@ public enum UniqueAccountField {
     public var queryName: String {
         switch self {
         case .username:
-            "username"
+            return "username"
         case .email:
-            "email"
+            return "email"
         case .phone:
-            "phone"
+            return "phone"
         }
     }
 }
