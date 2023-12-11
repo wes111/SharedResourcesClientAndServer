@@ -1,12 +1,13 @@
 //
 //  File.swift
-//  Created by Wesley Luntsford on 11/5/23.
+//  
+//
+//  Created by Wesley Luntsford on 12/10/23.
 //
 
 import Foundation
 
-// TODO: REMOVE!
-public struct UsernameAvailable: Codable {
+public struct UniqueAccountFieldAvailable: Codable {
     public var isAvailable: Bool
     
     public init(isAvailable: Bool) {

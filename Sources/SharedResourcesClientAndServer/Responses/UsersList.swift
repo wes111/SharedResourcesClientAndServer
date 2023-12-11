@@ -7,6 +7,7 @@
 
 import Foundation
 
+// TODO: REMOVE!
 public struct UsersList: Codable {
     public var list: [User]
     
