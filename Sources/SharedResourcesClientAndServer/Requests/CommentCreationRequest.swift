@@ -8,9 +8,9 @@
 import Foundation
 
 // The Comment object sent to the Appwrite database.
-struct CommentCreationRequest: Encodable {
-    let parentId: String?
-    let postId: String
-    let userId: String
-    let content: String
+public struct CommentCreationRequest: Encodable {
+    public let parentId: String?
+    public let postId: String
+    public let userId: String
+    public let content: String
 }

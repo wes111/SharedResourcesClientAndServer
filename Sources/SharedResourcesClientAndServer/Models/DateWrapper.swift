@@ -8,10 +8,10 @@
 import Foundation
 
 // TODO: - Make this into a decoding strategy instead of the wrapper here...
-struct DateWrapper: Decodable {
-    let date: Date
+public struct DateWrapper: Decodable {
+    public let date: Date
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         let dateString = try container.decode(String.self)
         
