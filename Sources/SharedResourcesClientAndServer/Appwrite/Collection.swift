@@ -16,7 +16,7 @@ public enum Collection {
     case rule
     
     public var id: String {
-        switch self {
+        return switch self {
         case .comment: "659981128cbf2c92a2d1"
         case .community: "65980c47b96a51cbd280"
         case .membership: "66009a851fea59c9dcbc"
