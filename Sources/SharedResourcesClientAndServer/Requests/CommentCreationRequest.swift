@@ -13,4 +13,11 @@ public struct CommentCreationRequest: Encodable {
     public let postId: String
     public let userId: String
     public let content: String
+    
+    public init(parentId: String?, postId: String, userId: String, content: String) {
+        self.parentId = parentId
+        self.postId = postId
+        self.userId = userId
+        self.content = content
+    }
 }
