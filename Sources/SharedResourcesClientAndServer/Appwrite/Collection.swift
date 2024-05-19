@@ -16,13 +16,19 @@ public enum Collection {
     case rule
     
     public var id: String {
-        return switch self {
-        case .comment: "659981128cbf2c92a2d1"
-        case .community: "65980c47b96a51cbd280"
-        case .membership: "66009a851fea59c9dcbc"
-        case .post: "6595636e9fae941f4374"
-        case .resource: "65dff72cc6125ac4e70d"
-        case .rule: "65dff7263f1bb5046e03"
+        switch self {
+        case .comment: 
+            return "659981128cbf2c92a2d1"
+        case .community:
+            return "65980c47b96a51cbd280"
+        case .membership:
+            return "66009a851fea59c9dcbc"
+        case .post:
+            return "6595636e9fae941f4374"
+        case .resource:
+            return "65dff72cc6125ac4e70d"
+        case .rule:
+            return "65dff7263f1bb5046e03"
         }
     }
 }
