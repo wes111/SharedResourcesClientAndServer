@@ -9,6 +9,7 @@ import Foundation
 
 public enum Collection {
     case comment
+    case commentVote
     case community
     case membership
     case post
@@ -19,6 +20,8 @@ public enum Collection {
         switch self {
         case .comment: 
             return "659981128cbf2c92a2d1"
+        case .commentVote:
+            return "66742878e4fbbd1e1cd5"
         case .community:
             return "65980c47b96a51cbd280"
         case .membership:
