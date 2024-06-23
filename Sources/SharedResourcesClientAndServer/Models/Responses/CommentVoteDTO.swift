@@ -8,7 +8,8 @@
 import Foundation
 
 // The CommentVote object received from the Appwrite database.
-public struct CommentVoteDTO: Decodable {
+// The server function needs this type to be Encodable (see `voteComment` func).
+public struct CommentVoteDTO: Codable {
     public let id: String
     public let creationDate: DateWrapper
     public let userId: String

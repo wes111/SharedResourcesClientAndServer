@@ -8,7 +8,7 @@
 import Foundation
 
 // TODO: - Make this into a decoding strategy instead of the wrapper here...
-public struct DateWrapper: Decodable {
+public struct DateWrapper: Codable {
     public let date: Date
 
     public init(from decoder: Decoder) throws {
