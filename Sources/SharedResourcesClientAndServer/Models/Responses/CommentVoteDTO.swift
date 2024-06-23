@@ -13,7 +13,7 @@ public struct CommentVoteDTO: Decodable {
     public let creationDate: DateWrapper
     public let userId: String
     public let commentId: String
-    public let vote: VoteType
+    public let vote: VoteType?
     
     enum CodingKeys: String, CodingKey {
         case userId, commentId, vote
