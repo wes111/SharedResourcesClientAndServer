@@ -11,7 +11,7 @@ import Foundation
 // The server function needs this type to be Encodable (see `voteComment` func).
 public struct CommentVoteDTO: Codable {
     public let id: String
-    public let creationDate: DateWrapper
+    public let creationDate: Date //DateWrapper
     public let userId: String
     public let commentId: String
     public let vote: VoteType?
