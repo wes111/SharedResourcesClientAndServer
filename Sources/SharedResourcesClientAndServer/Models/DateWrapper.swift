@@ -7,7 +7,8 @@
 
 import Foundation
 
-// TODO: - Make this into a decoding strategy instead of the wrapper here...
+// TODO: - This should be removed. The decoding/encoding strategy needed
+// is defined in shared instances, so this is not needed...
 public struct DateWrapper: Decodable {
     public let date: Date
 

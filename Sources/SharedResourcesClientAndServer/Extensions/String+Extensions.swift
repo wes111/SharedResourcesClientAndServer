@@ -8,6 +8,6 @@ import Foundation
 public extension String {
     func decode<T: Decodable>() throws -> T {
         let data = self.data(using: .utf8)!
-        return try JSONDecoder().decode(T.self, from: data)
+        return try JSONDecoder.shared.decode(T.self, from: data)
     }
 }
