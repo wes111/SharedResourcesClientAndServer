@@ -13,6 +13,7 @@ public enum Collection {
     case community
     case membership
     case post
+    case postVote
     case resource
     case rule
     
@@ -28,6 +29,8 @@ public enum Collection {
             return "66009a851fea59c9dcbc"
         case .post:
             return "6595636e9fae941f4374"
+        case .postVote:
+            return "6681b98dd1c0fcceab86"
         case .resource:
             return "65dff72cc6125ac4e70d"
         case .rule:
