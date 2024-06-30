@@ -7,6 +7,7 @@
 
 import Foundation
 
+// The Comment vote sent to the Appwrite database.
 public struct CommentVoteRequest: Codable {
     public let commentId: String
     public let userId: String

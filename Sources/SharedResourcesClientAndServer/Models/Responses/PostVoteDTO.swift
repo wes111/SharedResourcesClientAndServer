@@ -2,22 +2,22 @@
 //  File.swift
 //  
 //
-//  Created by Wesley Luntsford on 6/20/24.
+//  Created by Wesley Luntsford on 6/29/24.
 //
 
 import Foundation
 
-// The CommentVote object received from the Appwrite database.
+// The PostVote object received from the Appwrite database.
 // The server function needs this type to be Encodable (see `voteComment` func).
-public struct CommentVoteDTO: Codable {
+public struct PostVoteDTO: Codable {
     public let id: String
     public let creationDate: Date
     public let userId: String
-    public let commentId: String
+    public let postId: String
     public let vote: VoteType?
     
     enum CodingKeys: String, CodingKey {
-        case userId, commentId, vote
+        case userId, postId, vote
         case id = "$id"
         case creationDate = "$createdAt"
     }
