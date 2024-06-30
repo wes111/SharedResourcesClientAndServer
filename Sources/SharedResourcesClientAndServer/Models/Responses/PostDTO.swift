@@ -21,9 +21,20 @@ public struct PostDTO: Decodable {
     public let approvedDate: Date?
     public let upVoteCount: Int
     public let downVoteCount: Int
+    public let commentCount: Int
     
     enum CodingKeys: String, CodingKey {
-        case title, body, link, category, tags, userId, communityId, approvedDate, upVoteCount, downVoteCount
+        case title
+        case body
+        case link
+        case category
+        case tags
+        case userId
+        case communityId
+        case approvedDate
+        case upVoteCount
+        case downVoteCount
+        case commentCount
         case id = "$id"
         case creationDate = "$createdAt"
     }
