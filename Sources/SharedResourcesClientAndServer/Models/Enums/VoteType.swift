@@ -8,5 +8,6 @@
 import Foundation
 
 public enum VoteType: String, Codable {
-    case up, down
+    case up
+    case down
 }

@@ -13,7 +13,7 @@ public struct PostDTO: Decodable {
     public let title: String
     public let body: String
     public let link: URL?
-    public let category: String
+    public let categoryName: String
     public let tags: [String]
     public let userId: String
     public let communityId: String
@@ -24,17 +24,9 @@ public struct PostDTO: Decodable {
     public let commentCount: Int
     
     enum CodingKeys: String, CodingKey {
-        case title
-        case body
-        case link
-        case category
-        case tags
-        case userId
-        case communityId
-        case approvedDate
-        case upVoteCount
-        case downVoteCount
-        case commentCount
+        case title, body, link, categoryName, tags, userId, communityId, approvedDate, upVoteCount,
+             downVoteCount, commentCount
+        
         case id = "$id"
         case creationDate = "$createdAt"
     }
