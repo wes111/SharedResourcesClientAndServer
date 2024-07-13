@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum CommunityPostApproval: String, Codable {
+public enum CommunityPostApproval: String, Codable, CaseIterable {
     case automatic
     case mod
 }

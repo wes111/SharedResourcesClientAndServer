@@ -7,6 +7,6 @@
 
 import Foundation
 
-public enum ResourceCategory: String, Codable { // TODO: Add more categories?
+public enum ResourceCategory: String, Codable, CaseIterable { // TODO: Add more categories?
     case book, website, magazine, movie
 }

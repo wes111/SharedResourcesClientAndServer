@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum CommunityContent: String, Codable {
+public enum CommunityContent: String, Codable, CaseIterable {
     case familyFriendly
     case adultContent
 }

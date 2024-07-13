@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum CommunityCommenter: String, Codable {
+public enum CommunityCommenter: String, Codable, CaseIterable {
     case all
     case leadership
     case experts

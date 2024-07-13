@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum CommunityVisibility: String, Codable {
+public enum CommunityVisibility: String, Codable, CaseIterable {
     case all
     case member
 }

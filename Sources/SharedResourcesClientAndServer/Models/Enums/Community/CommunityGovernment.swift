@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum CommunityGovernment: String, Codable {
+public enum CommunityGovernment: String, Codable, CaseIterable {
     case autocracy
     case democracy
 }
