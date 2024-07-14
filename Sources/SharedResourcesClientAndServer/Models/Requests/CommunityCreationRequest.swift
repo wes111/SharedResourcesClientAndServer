@@ -15,7 +15,7 @@ public struct CommunityCreationRequest: Encodable {
     public let descriptionText: String
     public let rules: [RuleCreationRequest]
     public let resources: [ResourceCreationRequest]
-    public let categories: [PostCategoryCreationRequest]
+    public let postCategories: [PostCategoryCreationRequest]
     public let tags: [String]
     public let tagline: String
     public let settings: CommunitySettingsCreationRequest
@@ -26,7 +26,7 @@ public struct CommunityCreationRequest: Encodable {
         descriptionText: String,
         rules: [RuleCreationRequest],
         resources: [ResourceCreationRequest],
-        categories: [PostCategoryCreationRequest],
+        postCategories: [PostCategoryCreationRequest],
         tags: [String],
         tagline: String,
         settings: CommunitySettingsCreationRequest
@@ -36,14 +36,14 @@ public struct CommunityCreationRequest: Encodable {
         self.descriptionText = descriptionText
         self.rules = rules
         self.resources = resources
-        self.categories = categories
+        self.postCategories = postCategories
         self.tags = tags
         self.tagline = tagline
         self.settings = settings
     }
     
     enum CodingKeys: String, CodingKey {
-        case creatorId, name, categories, tags, tagline, settings
+        case creatorId, name, postCategories, tags, tagline, settings
         
         case rules = "rule"
         case resources = "resource"
