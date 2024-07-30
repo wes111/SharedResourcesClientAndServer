@@ -14,7 +14,7 @@ public struct PostCreationRequest: Encodable {
     public let body: String
     public let link: String?
     public let categoryName: String
-    public let tags: [CommunityTagCreationRequest]
+    public let tagIds: [String]
     public let userId: String
     public let communityId: String
     
@@ -23,7 +23,7 @@ public struct PostCreationRequest: Encodable {
         body: String,
         link: String?,
         categoryName: String,
-        tags: [CommunityTagCreationRequest],
+        tagIds: [String],
         userId: String,
         communityId: String
     ) {
@@ -31,7 +31,7 @@ public struct PostCreationRequest: Encodable {
         self.body = body
         self.link = link
         self.categoryName = categoryName
-        self.tags = tags
+        self.tagIds = tagIds
         self.userId = userId
         self.communityId = communityId
     }
@@ -39,6 +39,6 @@ public struct PostCreationRequest: Encodable {
     enum CodingKeys: String, CodingKey {
         case title, body, link, categoryName, userId, communityId
         
-        case tags = "communityTag"
+        case tagIds = "communityTag"
     }
 }
