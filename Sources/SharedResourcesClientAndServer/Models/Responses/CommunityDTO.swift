@@ -24,13 +24,13 @@ public struct CommunityDTO: Decodable {
     public var rules: [RuleDTO]
     public var resources: [ResourceDTO]
     public var postCategories: [PostCategoryDTO]
-    public var tags: [String]
+    public var tags: [CommunityTagDTO]
     public var tagline: String
     public var alliedCommunities: [CommunityDTO]? // TODO: Add as attribute in Appwrite Database.
     public var settings: CommunitySettingsDTO
     
     enum CodingKeys: String, CodingKey {
-        case creatorId, name, memberCount, postCategories, tags, tagline,
+        case creatorId, name, memberCount, postCategories, tagline,
              alliedCommunities, settings
         
         case id = "$id"
@@ -38,5 +38,6 @@ public struct CommunityDTO: Decodable {
         case creationDate = "$createdAt"
         case rules = "rule"
         case resources = "resource"
+        case tags = "communityTag"
     }
 }

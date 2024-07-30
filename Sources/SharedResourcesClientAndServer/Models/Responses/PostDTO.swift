@@ -14,7 +14,7 @@ public struct PostDTO: Decodable {
     public let body: String
     public let link: URL?
     public let categoryName: String
-    public let tags: [String]
+    public let tags: [CommunityTagDTO]
     public let userId: String
     public let communityId: String
     public let creationDate: Date
@@ -25,10 +25,11 @@ public struct PostDTO: Decodable {
     public let archivedDate: Date?
     
     enum CodingKeys: String, CodingKey {
-        case title, body, link, categoryName, tags, userId, communityId, approvedDate, upVoteCount,
+        case title, body, link, categoryName, userId, communityId, approvedDate, upVoteCount,
              downVoteCount, commentCount, archivedDate
         
         case id = "$id"
         case creationDate = "$createdAt"
+        case tags = "communityTag"
     }
 }
