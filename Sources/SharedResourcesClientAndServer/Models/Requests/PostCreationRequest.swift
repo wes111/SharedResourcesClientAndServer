@@ -15,6 +15,9 @@ public struct PostCreationRequest: Encodable {
     public let link: String?
     public let categoryName: String
     public let tagIds: [String]
+    public let communityTagsString: String // TODO: Backend should create this String in a func, not client.
+    // Work-around for Appwrite not supporting queries on relationships:
+    // https://appwrite.io/threads/1187964833228927016
     public let userId: String
     public let communityId: String
     
@@ -24,6 +27,7 @@ public struct PostCreationRequest: Encodable {
         link: String?,
         categoryName: String,
         tagIds: [String],
+        communityTagsString: String,
         userId: String,
         communityId: String
     ) {
@@ -32,12 +36,13 @@ public struct PostCreationRequest: Encodable {
         self.link = link
         self.categoryName = categoryName
         self.tagIds = tagIds
+        self.communityTagsString = communityTagsString
         self.userId = userId
         self.communityId = communityId
     }
     
     enum CodingKeys: String, CodingKey {
-        case title, body, link, categoryName, userId, communityId
+        case title, body, link, categoryName, userId, communityId, communityTagsString
         
         case tagIds = "communityTag"
     }
