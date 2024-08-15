@@ -10,11 +10,12 @@ import Foundation
 // The CommentVote object received from the Appwrite database.
 // The server function needs this type to be Encodable (see `voteComment` func).
 public struct CommentVoteDTO: Codable {
+    public let commentId: String
+    public let userId: String
+    public let vote: VoteType?
+    
     public let id: String
     public let creationDate: Date
-    public let userId: String
-    public let commentId: String
-    public let vote: VoteType?
     
     enum CodingKeys: String, CodingKey {
         case userId, commentId, vote

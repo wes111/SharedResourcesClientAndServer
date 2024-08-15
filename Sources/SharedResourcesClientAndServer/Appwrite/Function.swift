@@ -11,7 +11,7 @@ public enum AppwriteFunction: String {
     case postComment
     case voteComment
     case votePost
-    case uniqueAccountFieldIsAvailable = "UniqueAccountFieldIsAvailable"
+    case uniqueAccountFieldIsAvailable
     
     public var id: String {
         self.rawValue

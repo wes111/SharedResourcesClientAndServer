@@ -14,27 +14,29 @@ import Foundation
 
 // The Community object received from the Appwrite database.
 public struct CommunityDTO: Decodable {
-    public let id: String
-    public let creatorId: String
-    public let name: String
-    public let descriptionText: String
-    public let creationDate: Date
-    //public var representatives: [Candidate]? // TODO: Add as attribute in Appwrite Database.
-    public let memberCount: Int
-    public var rules: [RuleDTO]
-    public var resources: [ResourceDTO]
-    public var postCategories: [PostCategoryDTO]
     public var tags: [CommunityTagDTO]
-    public var tagline: String
-    public var alliedCommunities: [CommunityDTO]? // TODO: Add as attribute in Appwrite Database.
+    public let creatorId: String
+    public let descriptionText: String
+    public let memberCount: Int
+    public let name: String
+    public var postCategories: [PostCategoryDTO]
+    public var resources: [ResourceDTO]
+    public var rules: [RuleDTO]
     public var settings: CommunitySettingsDTO
+    public var tagline: String
+    
+    public let creationDate: Date
+    public let id: String
+    public var alliedCommunities: [CommunityDTO]? // TODO: Add as attribute in Appwrite Database.
+    
     
     enum CodingKeys: String, CodingKey {
-        case creatorId, name, memberCount, postCategories, tagline,
+        case creatorId, name, memberCount, tagline,
              alliedCommunities, settings
         
         case id = "$id"
         case descriptionText = "description"
+        case postCategories = "postCategory"
         case creationDate = "$createdAt"
         case rules = "rule"
         case resources = "resource"

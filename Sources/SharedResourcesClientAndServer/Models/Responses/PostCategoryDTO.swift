@@ -8,12 +8,13 @@
 import Foundation
 
 public struct PostCategoryDTO: Decodable {
-    public let id: String
-    public let name: String
-    public let imageUrl: URL?
-    public let postCount: Int
     public let communityId: String
+    public let imageUrl: URL?
+    public let name: String
+    public let postCount: Int
+    
     public let creationDate: Date
+    public let id: String
     
     enum CodingKeys: String, CodingKey {
         case name, imageUrl, postCount, communityId

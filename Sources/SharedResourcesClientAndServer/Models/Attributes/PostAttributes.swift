@@ -9,19 +9,19 @@ import Foundation
 
 // The attribute names defined in the Appwrite database.
 public enum PostAttributes: String {
-    case title
-    case body
-    case link
-    case userId
-    case communityId
     case approvedDate
-    case upVoteCount
-    case downVoteCount
-    case commentCount
-    case categoryName
     case archivedDate
+    case body
+    case categoryName
+    case commentCount
+    case communityId
     case communityTag
     case communityTagsString
+    case downVoteCount
+    case link
+    case title
+    case upVoteCount
+    case userId
     
     public var queryName: String {
         self.rawValue

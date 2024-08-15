@@ -9,20 +9,21 @@ import Foundation
 
 // The Post object received from the Appwrite database.
 public struct PostDTO: Decodable {
-    public let id: String
-    public let title: String
-    public let body: String
-    public let link: URL?
-    public let categoryName: String
-    public let tags: [CommunityTagDTO]
-    public let userId: String
-    public let communityId: String
-    public let creationDate: Date
     public let approvedDate: Date?
-    public let upVoteCount: Int
-    public let downVoteCount: Int
-    public let commentCount: Int
     public let archivedDate: Date?
+    public let body: String
+    public let categoryName: String
+    public let commentCount: Int
+    public let communityId: String
+    public let tags: [CommunityTagDTO]
+    public let downVoteCount: Int
+    public let link: URL?
+    public let title: String
+    public let upVoteCount: Int
+    public let userId: String
+    
+    public let creationDate: Date
+    public let id: String
     
     enum CodingKeys: String, CodingKey {
         case title, body, link, categoryName, userId, communityId, approvedDate, upVoteCount,

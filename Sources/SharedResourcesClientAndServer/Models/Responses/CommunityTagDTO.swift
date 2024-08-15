@@ -8,10 +8,11 @@
 import Foundation
 
 public struct CommunityTagDTO: Decodable {
-    public let id: String
     public let communityId: String
     public let name: String
+    
     public let creationDate: Date
+    public let id: String
     
     enum CodingKeys: String, CodingKey {
         case communityId, name
