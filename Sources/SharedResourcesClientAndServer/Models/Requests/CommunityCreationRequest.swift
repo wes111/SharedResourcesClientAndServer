@@ -11,14 +11,14 @@ import Foundation
 // Note that 'id', 'creationDate', 'representatives' are not part of this object.
 public struct CommunityCreationRequest: Encodable {
     public let creatorId: String
-    public let name: String // Name is the same as Id.
     public let descriptionText: String
-    public let rules: [RuleCreationRequest]
-    public let resources: [ResourceCreationRequest]
+    public let name: String // Name is the same as Id.
     public let postCategories: [PostCategoryCreationRequest]
-    public let tags: [CommunityTagCreationRequest]
-    public let tagline: String
+    public let resources: [ResourceCreationRequest]
+    public let rules: [RuleCreationRequest]
     public let settings: CommunitySettingsCreationRequest
+    public let tagline: String
+    public let tags: [CommunityTagCreationRequest]
     
     public init(
         creatorId: String,
@@ -43,11 +43,12 @@ public struct CommunityCreationRequest: Encodable {
     }
     
     enum CodingKeys: String, CodingKey {
-        case creatorId, name, postCategories, tagline, settings
+        case creatorId, name, tagline, settings
         
         case rules = "rule"
         case resources = "resource"
         case descriptionText = "description"
         case tags = "communityTag"
+        case postCategories = "postCategory"
     }
 }

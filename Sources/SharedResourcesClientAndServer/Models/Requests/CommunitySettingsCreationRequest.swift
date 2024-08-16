@@ -9,12 +9,12 @@ import Foundation
 
 // The CommunitySettings object sent to the Appwrite database.
 public struct CommunitySettingsCreationRequest: Encodable {
-    public var government: CommunityGovernment
-    public var content: CommunityContent
-    public var visibility: CommunityVisibility
-    public var poster: CommunityPoster
     public var commenter: CommunityCommenter
+    public var content: CommunityContent
+    public var government: CommunityGovernment
     public var postApproval: CommunityPostApproval
+    public var poster: CommunityPoster
+    public var visibility: CommunityVisibility
     
     public init(
         government: CommunityGovernment,

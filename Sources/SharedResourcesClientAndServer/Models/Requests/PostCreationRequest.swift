@@ -10,16 +10,17 @@ import Foundation
 // The Post object sent to the Appwrite database.
 // Note that 'id', 'creationDate', and 'approvedDate' are not part of this object.
 public struct PostCreationRequest: Encodable {
-    public let title: String
     public let body: String
-    public let link: String?
     public let categoryName: String
-    public let tagIds: [String]
-    public let communityTagsString: String // TODO: Backend should create this String in a func, not client.
+    public let communityId: String
+    
     // Work-around for Appwrite not supporting queries on relationships:
     // https://appwrite.io/threads/1187964833228927016
+    public let communityTagsString: String // TODO: Backend should create this String in a func, not client.
+    public let tagIds: [String]
+    public let link: String?
+    public let title: String
     public let userId: String
-    public let communityId: String
     
     public init(
         title: String,

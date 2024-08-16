@@ -11,8 +11,8 @@ import Foundation
 // Note that 'id', is not part of this object.
 public struct RuleCreationRequest: Encodable {
     public let communityId: String
-    public let title: String
     public let description: String
+    public let title: String
     
     public init(communityId: String, title: String, description: String) {
         self.communityId = communityId
