@@ -8,7 +8,7 @@
 import Foundation
 
 // The attribute names defined in the Appwrite database.
-public enum PostAttributes: String {
+public enum PostAttribute: String {
     case approvedDate
     case archivedDate
     case body
@@ -19,6 +19,7 @@ public enum PostAttributes: String {
     case communityTagsString
     case downVoteCount
     case link
+    case score
     case title
     case upVoteCount
     case userId

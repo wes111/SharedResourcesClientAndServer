@@ -16,12 +16,13 @@ public struct CommentDTO: Decodable {
     public let responseCount: Int // Note: This value is only an estimate. Could change in the future...
     public let upVoteCount: Int // Note: This value is only an estimate. Could change in the future...
     public let userId: String
+    public let score: Int
     
     public let id: String
     public let creationDate: Date
     
     enum CodingKeys: String, CodingKey {
-        case parentId, postId, userId, content, upVoteCount, downVoteCount, responseCount
+        case parentId, postId, userId, content, upVoteCount, downVoteCount, responseCount, score
         case id = "$id"
         case creationDate = "$createdAt"
     }
