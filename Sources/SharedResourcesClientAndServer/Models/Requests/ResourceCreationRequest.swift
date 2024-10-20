@@ -9,7 +9,7 @@ import Foundation
 
 // The Resource object sent to the Appwrite database.
 // Note that 'id', is not part of this object.
-public struct ResourceCreationRequest: Encodable {
+public struct ResourceCreationRequest: Encodable, Sendable {
     public let category: ResourceCategory
     public let communityId: String
     public let description: String?

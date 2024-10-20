@@ -9,7 +9,7 @@ import Foundation
 
 // The CommunityTag object sent to the Appwrite database.
 // Note that 'id', is not part of this object.
-public struct CommunityTagCreationRequest: Encodable {
+public struct CommunityTagCreationRequest: Encodable, Sendable {
     public let communityId: String
     public let name: String
     

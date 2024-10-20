@@ -9,7 +9,7 @@ import Foundation
 
 // The PostCategory object sent to the Appwrite database.
 // Note that 'id' and 'postCount', are not part of this object.
-public struct PostCategoryCreationRequest: Encodable {
+public struct PostCategoryCreationRequest: Encodable, Sendable {
     public let communityId: String
     public let imageUrl: URL?
     public let name: String

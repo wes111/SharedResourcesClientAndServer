@@ -9,7 +9,7 @@ import Foundation
 
 // The Community object sent to the Appwrite database.
 // Note that 'id', 'creationDate', 'representatives' are not part of this object.
-public struct CommunityCreationRequest: Encodable {
+public struct CommunityCreationRequest: Encodable, Sendable {
     public let creatorId: String
     public let descriptionText: String
     public let name: String // Name is the same as Id.

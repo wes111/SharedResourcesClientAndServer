@@ -8,7 +8,7 @@
 import Foundation
 
 // The CommunitySettings object sent to the Appwrite database.
-public struct CommunitySettingsCreationRequest: Encodable {
+public struct CommunitySettingsCreationRequest: Encodable, Sendable {
     public var commenter: CommunityCommenter
     public var content: CommunityContent
     public var government: CommunityGovernment
