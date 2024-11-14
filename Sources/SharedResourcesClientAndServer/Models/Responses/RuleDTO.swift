@@ -21,3 +21,14 @@ public struct RuleDTO: Decodable {
         case id = "$id"
     }
 }
+
+public extension RuleDTO {
+    func toRule() -> Rule {
+        .init(
+            id: id,
+            title: title,
+            description: description,
+            communityId: communityId
+        )
+    }
+}

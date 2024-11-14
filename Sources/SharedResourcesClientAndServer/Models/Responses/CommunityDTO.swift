@@ -43,3 +43,26 @@ public struct CommunityDTO: Decodable {
         case tags = "communityTag"
     }
 }
+
+extension CommunityDTO: DomainConvertible {
+    public static var collection: Collection = .community
+    
+    public func toDomain() -> Community {
+        .init(
+            id: id,
+            creatorId: creatorId,
+            name: name,
+            descriptionText: descriptionText,
+            creationDate: creationDate,
+            // representatives: representatives ?? [],
+            memberCount: memberCount,
+            rules: rules.map { $0.toRule() },
+            resources: resources.map { $0.toResource() },
+            categories: postCategories.map { $0.toPostCategory() },
+            tags: tags.map { $0.toCommunityTag() },
+            tagline: tagline,
+            settings: settings.toCommunitySettings()
+            // alliedCommunities: alliedCommunities?.compactMap { $0.toCommunity() } ?? [],
+        )
+    }
+}

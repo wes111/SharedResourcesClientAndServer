@@ -19,3 +19,15 @@ public struct CommentVoteRequest: Codable {
         self.vote = vote
     }
 }
+
+extension CommentVoteRequest: FunctionCreatable {
+    public var function: AppwriteFunction {
+        .voteComment
+    }
+    
+    public typealias ResponseModel = CommentVoteDTO
+    
+    public var creationId: String? {
+        nil
+    }
+}

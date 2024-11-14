@@ -7,8 +7,21 @@
 
 import Foundation
 
-public enum CommunityCommenter: String, Codable, CaseIterable {
+public enum CommunityCommenter: String, Codable, CaseIterable, Sendable {
     case all
     case leadership
     case experts
+}
+
+extension CommunityCommenter: Identifiable {
+    public var id: String {
+        switch self {
+        case .all:
+            "Anyone"
+        case .leadership:
+            "Community Leadership"
+        case .experts:
+            "Community Experts"
+        }
+    }
 }

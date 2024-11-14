@@ -16,4 +16,26 @@ public enum AppwriteFunction: String {
     public var id: String {
         self.rawValue
     }
+    
+    public var method: FunctionMethod {
+        switch self {
+        case .postComment:
+                .post
+        case .voteComment:
+                .post
+        case .votePost:
+                .post
+        case .uniqueAccountFieldIsAvailable:
+                .get
+        }
+    }
+}
+
+public enum FunctionMethod: String, Codable {
+    case get = "GET"
+    case post = "POST"
+    case put = "PUT"
+    case patch = "PATCH"
+    case delete = "DELETE"
+    case options = "OPTIONS"
 }

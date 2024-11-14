@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum VoteType: String, Codable {
+public enum VoteType: String, Codable, Sendable {
     case up
     case down
 }

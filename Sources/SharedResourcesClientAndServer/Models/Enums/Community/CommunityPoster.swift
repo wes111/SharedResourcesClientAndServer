@@ -7,8 +7,21 @@
 
 import Foundation
 
-public enum CommunityPoster: String, Codable, CaseIterable {
+public enum CommunityPoster: String, Codable, CaseIterable, Sendable {
     case all
     case leadership
     case experts
+}
+
+extension CommunityPoster: Identifiable {
+    public var id: String {
+        switch self {
+        case .all:
+            "Anyone"
+        case .leadership:
+            "Community Leadership"
+        case .experts:
+            "Community Experts"
+        }
+    }
 }

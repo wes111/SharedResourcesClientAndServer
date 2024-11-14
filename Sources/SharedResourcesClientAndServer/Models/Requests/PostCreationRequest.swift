@@ -48,3 +48,11 @@ public struct PostCreationRequest: Encodable {
         case tagIds = "communityTag"
     }
 }
+
+extension PostCreationRequest: Creatable {
+    public typealias ResponseModel = PostDTO
+    
+    public var creationId: String? {
+        nil
+    }
+}

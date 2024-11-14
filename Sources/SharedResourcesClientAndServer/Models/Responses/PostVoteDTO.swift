@@ -23,3 +23,17 @@ public struct PostVoteDTO: Codable {
         case creationDate = "$createdAt"
     }
 }
+
+extension PostVoteDTO: DomainConvertible {
+    public static let collection: Collection = .postVote
+    
+    public func toDomain() -> PostVote {
+        .init(
+            id: id,
+            creationDate: creationDate,
+            itemId: postId,
+            userId: userId,
+            vote: vote
+        )
+    }
+}

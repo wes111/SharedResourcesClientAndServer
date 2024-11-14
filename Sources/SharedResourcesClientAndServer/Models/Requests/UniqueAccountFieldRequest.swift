@@ -9,10 +9,20 @@ import Foundation
 
 public struct UniqueAccountFieldRequest: Codable {
     public var field: UniqueAccountField
-    public var value: String
     
-    public init(field: UniqueAccountField, value: String) {
+    public init(field: UniqueAccountField) {
         self.field = field
-        self.value = value
+    }
+}
+
+extension UniqueAccountFieldRequest: FunctionCreatable {
+    public var function: AppwriteFunction {
+        .uniqueAccountFieldIsAvailable
+    }
+    
+    public typealias ResponseModel = UniqueAccountFieldAvailableDTO
+    
+    public var creationId: String? {
+        nil
     }
 }

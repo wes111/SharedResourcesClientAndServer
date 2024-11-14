@@ -7,7 +7,18 @@
 
 import Foundation
 
-public enum CommunityGovernment: String, Codable, CaseIterable {
+public enum CommunityGovernment: String, Codable, CaseIterable, Sendable {
     case autocracy
     case democracy
+}
+
+extension CommunityGovernment: Identifiable {
+    public var id: String {
+        switch self {
+        case .autocracy:
+            "Autocracy"
+        case .democracy:
+            "Democracy"
+        }
+    }
 }

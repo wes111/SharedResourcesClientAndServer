@@ -27,3 +27,24 @@ public struct CommentDTO: Decodable {
         case creationDate = "$createdAt"
     }
 }
+
+extension CommentDTO: DomainConvertible {
+    
+    public static let collection: Collection = .comment
+    
+    public func toDomain() -> Comment {
+        .init(
+            id: id,
+            parentId: parentId,
+            postId: postId,
+            userId: userId,
+            creationDate: creationDate,
+            content: content,
+            upVoteCount: upVoteCount,
+            downVoteCount: downVoteCount,
+            responseCount: responseCount,
+            score: score
+        )
+    }
+}
+

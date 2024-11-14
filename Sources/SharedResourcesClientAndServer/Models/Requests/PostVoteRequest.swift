@@ -19,3 +19,15 @@ public struct PostVoteRequest: Codable {
         self.vote = vote
     }
 }
+
+extension PostVoteRequest: FunctionCreatable {
+    public var function: AppwriteFunction {
+        .votePost
+    }
+    
+    public typealias ResponseModel = PostVoteDTO
+    
+    public var creationId: String? {
+        nil
+    }
+}

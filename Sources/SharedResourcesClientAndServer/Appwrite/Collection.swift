@@ -20,6 +20,8 @@ public enum Collection: String {
     case resource
     case rule
     
+    case none // TODO: Find a better way to handle. Some requests do not have a corresponding table...
+    
     public var id: String {
         self.rawValue
     }

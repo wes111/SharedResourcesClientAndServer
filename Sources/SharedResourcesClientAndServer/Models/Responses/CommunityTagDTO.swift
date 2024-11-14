@@ -20,3 +20,9 @@ public struct CommunityTagDTO: Decodable {
         case creationDate = "$createdAt"
     }
 }
+
+public extension CommunityTagDTO {
+    func toCommunityTag() -> CommunityTag {
+        .init(id: id, communityId: communityId, name: name, creationDate: creationDate)
+    }
+}

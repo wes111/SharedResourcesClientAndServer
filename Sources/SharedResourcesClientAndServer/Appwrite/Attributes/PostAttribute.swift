@@ -24,7 +24,7 @@ public enum PostAttribute: String {
     case upVoteCount
     case userId
     
-    public var queryName: String {
+    public var key: String {
         self.rawValue
     }
 }

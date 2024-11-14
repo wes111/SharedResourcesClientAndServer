@@ -23,3 +23,19 @@ public struct CommentVoteDTO: Codable {
         case creationDate = "$createdAt"
     }
 }
+
+extension CommentVoteDTO: DomainConvertible {
+    public static var collection: Collection {
+        .commentVote
+    }
+    
+    public func toDomain() -> CommentVote {
+        .init(
+            id: id,
+            creationDate: creationDate,
+            itemId: commentId,
+            userId: userId,
+            vote: vote
+        )
+    }
+}

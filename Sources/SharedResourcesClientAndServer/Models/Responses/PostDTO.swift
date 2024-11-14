@@ -35,3 +35,29 @@ public struct PostDTO: Decodable {
         case tags = "communityTag"
     }
 }
+
+extension PostDTO: DomainConvertible {
+    public static var collection: Collection {
+        .post
+    }
+    
+    public func toDomain() -> Post {
+        .init(
+            id: id,
+            title: title,
+            body: body,
+            link: link,
+            categoryName: categoryName,
+            tags: tags.map { $0.toCommunityTag() },
+            userId: userId,
+            communityId: communityId,
+            creationDate: creationDate,
+            approvedDate: approvedDate,
+            archivedDate: archivedDate,
+            upVoteCount: upVoteCount,
+            downVoteCount: downVoteCount,
+            commentCount: commentCount,
+            score: score
+        )
+    }
+}

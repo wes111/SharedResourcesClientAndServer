@@ -22,3 +22,16 @@ public struct ResourceDTO: Decodable {
         case id = "$id"
     }
 }
+
+public extension ResourceDTO {
+    func toResource() -> Resource {
+        .init(
+            id: id,
+            title: title,
+            description: description,
+            link: link,
+            category: category,
+            communityId: communityId
+        )
+    }
+}

@@ -8,7 +8,7 @@
 import Foundation
 
 // The Comment object sent to the Appwrite database.
-public struct CommentCreationRequest: Codable {
+public struct CommentCreationRequest {
     public let content: String
     public let parentId: String?
     public let postId: String
@@ -19,5 +19,13 @@ public struct CommentCreationRequest: Codable {
         self.postId = postId
         self.userId = userId
         self.content = content
+    }
+}
+
+extension CommentCreationRequest: Creatable {
+    public typealias ResponseModel = CommentDTO
+    
+    public var creationId: String? {
+        nil
     }
 }

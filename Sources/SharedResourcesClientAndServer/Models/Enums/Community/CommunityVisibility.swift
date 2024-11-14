@@ -7,7 +7,18 @@
 
 import Foundation
 
-public enum CommunityVisibility: String, Codable, CaseIterable {
+public enum CommunityVisibility: String, Codable, CaseIterable, Sendable {
     case all
     case member
+}
+
+extension CommunityVisibility: Identifiable {
+    public var id: String {
+        switch self {
+        case .all:
+            "Anyone"
+        case .member:
+            "Members"
+        }
+    }
 }

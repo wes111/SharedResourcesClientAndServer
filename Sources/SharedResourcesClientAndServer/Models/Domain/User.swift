@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct User: Codable, Identifiable {
+public struct User: Codable, Identifiable, Sendable {
     public let accessedAt: Date?
     public let createdAt: Date?
     public let email: String

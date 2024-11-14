@@ -23,3 +23,16 @@ public struct PostCategoryDTO: Decodable {
         case creationDate = "$createdAt"
     }
 }
+
+public extension PostCategoryDTO {
+    func toPostCategory() -> PostCategory {
+        .init(
+            id: id,
+            name: name,
+            imageUrl: imageUrl,
+            postCount: postCount,
+            communityId: communityId,
+            creationDate: creationDate
+        )
+    }
+}
