@@ -9,9 +9,10 @@ import Foundation
 
 public struct PhoneNumberInputValidator: InputValidator {
     public static let fieldName: String = "Phone Number"
+    public static let maxCharacterCount: Int = 14
     
     public static let validationRules: [InputValidationRule] = [
-        .maxLength(14),
+        .maxLength(Self.maxCharacterCount),
         .minLength(14),
         .phoneNumberFormat
     ]

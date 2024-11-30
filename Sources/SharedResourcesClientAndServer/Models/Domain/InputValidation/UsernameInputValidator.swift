@@ -9,10 +9,11 @@ import Foundation
 
 public struct UsernameInputValidator: InputValidator {
     public static let fieldName: String = "Username"
+    public static let maxCharacterCount: Int = 36
     
     public static let validationRules: [InputValidationRule] = [
         .minLength(1),
-        .maxLength(36),
+        .maxLength(Self.maxCharacterCount),
         .beginsWithAlphanumeric,
         .onlyUsernameCharacterSet
     ]

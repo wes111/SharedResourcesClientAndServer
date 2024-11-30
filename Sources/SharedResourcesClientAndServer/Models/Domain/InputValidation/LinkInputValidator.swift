@@ -9,10 +9,11 @@ import Foundation
 
 public struct LinkInputValidator: InputValidator {
     public static let fieldName: String = "Link"
+    public static let maxCharacterCount: Int = 500
     
     public static let validationRules: [InputValidationRule] = [
         .minLength(9),
-        .maxLength(500),
+        .maxLength(Self.maxCharacterCount),
         .beginsWithHttps
     ]
 }

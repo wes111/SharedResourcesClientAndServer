@@ -17,6 +17,7 @@ public enum InputValidationRule: Hashable {
     case containsLowercaseLetter
     case containsDigit
     case containsSpecialCharacter
+    case onlyAlphanumeric
     case onlyUsernameCharacterSet
     case beginsWithAlphanumeric
     case beginsWithHttps
@@ -38,6 +39,7 @@ public enum InputValidationRule: Hashable {
         case .beginsWithAlphanumeric: "begins with an alphanumeric character"
         case .beginsWithHttps: "begins with \"https://\""
         case .phoneNumberFormat: "Valid phone number format"
+        case .onlyAlphanumeric: "contains only alphanumeric characters"
         }
     }
     
@@ -99,6 +101,9 @@ public enum InputValidationRule: Hashable {
             
         case .phoneNumberFormat:
             return input.count == 10 && Int(input) != nil
+            
+        case .onlyAlphanumeric:
+            return input.unicodeScalars.allSatisfy { CharacterSet.alphanumerics.contains($0) }
         }
     }
 }

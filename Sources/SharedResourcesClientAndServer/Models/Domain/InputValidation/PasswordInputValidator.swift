@@ -9,6 +9,7 @@ import Foundation
 
 public struct PasswordInputValidator: InputValidator {
     public static let fieldName: String = "Password"
+    public static let maxCharacterCount: Int = 128
     
     public static let validationRules: [InputValidationRule] = [
         .containsUppercaseLetter,
@@ -16,6 +17,6 @@ public struct PasswordInputValidator: InputValidator {
         .containsDigit,
         .containsSpecialCharacter,
         .minLength(8),
-        .maxLength(128)
+        .maxLength(Self.maxCharacterCount)
     ]
 }

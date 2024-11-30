@@ -9,9 +9,10 @@ import Foundation
 
 public struct EmailInputValidator: InputValidator {
     public static let fieldName: String = "Email"
+    public static let maxCharacterCount: Int = 128
     
     public static let validationRules: [InputValidationRule] = [
-        .maxLength(128),
+        .maxLength(Self.maxCharacterCount),
         .emailFormat
     ]
 }

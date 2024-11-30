@@ -7,9 +7,10 @@
 
 import Foundation
 
-public protocol InputValidator {
+public protocol InputValidator: Equatable, Hashable {
     static var validationRules: [InputValidationRule] { get }
     static var fieldName: String { get }
+    static var maxCharacterCount: Int { get }
     
     static func unmetRequirements(for input: String) -> [InputValidationRule]
     static func isValid(input: String) -> Bool
