@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum DateFilter: CaseIterable {
+public enum DateFilter: CaseIterable, Sendable {
     case day
     case week
     case month

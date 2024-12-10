@@ -51,13 +51,13 @@ public extension PostFilters {
     }
 }
 
-public enum PostArchivedFilter {
+public enum PostArchivedFilter: Sendable {
     case archived
     case notArchived
     case noFilter
 }
 
-public enum PostApprovedFilter {
+public enum PostApprovedFilter: Sendable {
     case approved
     case notApproved
     case noFilter

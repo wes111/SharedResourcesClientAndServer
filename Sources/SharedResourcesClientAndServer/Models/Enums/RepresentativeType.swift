@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum RepresentativeType: String, Codable, CaseIterable, CustomStringConvertible, Identifiable {
+public enum RepresentativeType: String, Codable, CaseIterable, CustomStringConvertible, Identifiable, Sendable {
 
     case mod, legislator, creator
     

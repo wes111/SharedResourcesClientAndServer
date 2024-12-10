@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SortOrder: CaseIterable {
+public enum SortOrder: CaseIterable, Sendable {
     case newest
     case oldest
     case topRated
