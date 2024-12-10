@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum CursorPaginationOption {
+public enum CursorPaginationOption: Sendable {
     case before(id: String)
     case after(id: String)
     case initial
