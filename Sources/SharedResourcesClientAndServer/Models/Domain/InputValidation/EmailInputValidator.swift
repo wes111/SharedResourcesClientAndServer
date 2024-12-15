@@ -7,12 +7,16 @@
 
 import Foundation
 
-public struct EmailInputValidator: InputValidator {
+public enum EmailField: InputField {
+    public typealias Validator = EmailInputValidator
     public static let fieldName: String = "Email"
     public static let maxCharacterCount: Int = 128
-    
+    public static var shouldTrimWhileTapping: Bool = true
+}
+
+public enum EmailInputValidator: InputValidator {
     public static let validationRules: [InputValidationRule] = [
-        .maxLength(Self.maxCharacterCount),
+        .maxLength(EmailField.maxCharacterCount),
         .emailFormat
     ]
 }

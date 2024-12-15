@@ -7,12 +7,16 @@
 
 import Foundation
 
-public struct PhoneNumberInputValidator: InputValidator {
+public enum PhoneNumberField: InputField {
+    public typealias Validator = PhoneNumberInputValidator
     public static let fieldName: String = "Phone Number"
     public static let maxCharacterCount: Int = 14
-    
+    public static var shouldTrimWhileTapping: Bool = true
+}
+
+public enum PhoneNumberInputValidator: InputValidator {
     public static let validationRules: [InputValidationRule] = [
-        .maxLength(Self.maxCharacterCount),
+        .maxLength(PhoneNumberField.maxCharacterCount),
         .minLength(14),
         .phoneNumberFormat
     ]

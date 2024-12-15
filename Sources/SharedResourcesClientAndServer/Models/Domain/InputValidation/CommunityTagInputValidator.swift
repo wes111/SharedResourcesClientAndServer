@@ -7,13 +7,17 @@
 
 import Foundation
 
-public struct CommunityTagInputValidator: InputValidator {
+public enum CommunityTagField: InputField {
+    public typealias Validator = CommunityTagInputValidator
     public static let fieldName: String = "Tags"
     public static let maxCharacterCount: Int = 25
-    
+    public static var shouldTrimWhileTapping: Bool = true
+}
+
+public enum CommunityTagInputValidator: InputValidator {
     public static let validationRules: [InputValidationRule] = [
         .minLength(2),
-        .maxLength(Self.maxCharacterCount),
+        .maxLength(CommunityTagField.maxCharacterCount),
         .onlyAlphanumeric
     ]
 }

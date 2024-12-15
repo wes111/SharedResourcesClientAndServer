@@ -7,13 +7,17 @@
 
 import Foundation
 
-public struct UsernameInputValidator: InputValidator {
+public enum UsernameField: InputField {
+    public typealias Validator = UsernameInputValidator
     public static let fieldName: String = "Username"
     public static let maxCharacterCount: Int = 36
-    
+    public static var shouldTrimWhileTapping: Bool = true
+}
+
+public enum UsernameInputValidator: InputValidator {
     public static let validationRules: [InputValidationRule] = [
         .minLength(1),
-        .maxLength(Self.maxCharacterCount),
+        .maxLength(UsernameField.maxCharacterCount),
         .beginsWithAlphanumeric,
         .onlyUsernameCharacterSet
     ]

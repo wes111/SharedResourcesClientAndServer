@@ -7,12 +7,16 @@
 
 import Foundation
 
-public struct DefaultInputValidator: InputValidator {
+public enum DefaultField: InputField {
+    public typealias Validator = DefaultInputValidator
     public static let fieldName: String = "Text"
     public static let maxCharacterCount: Int = .max
-    
+    public static var shouldTrimWhileTapping: Bool = true
+}
+
+public enum DefaultInputValidator: InputValidator {
     public static let validationRules: [InputValidationRule] = [
         .minLength(1),
-        .maxLength(Self.maxCharacterCount)
+        .maxLength(DefaultField.maxCharacterCount)
     ]
 }

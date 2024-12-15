@@ -7,11 +7,15 @@
 
 import Foundation
 
-public protocol InputValidator: Equatable, Hashable {
-    static var validationRules: [InputValidationRule] { get }
+public protocol InputField {
+    associatedtype Validator: InputValidator
     static var fieldName: String { get }
     static var maxCharacterCount: Int { get }
-    
+    static var shouldTrimWhileTapping: Bool { get }
+}
+
+public protocol InputValidator: Equatable, Hashable {
+    static var validationRules: [InputValidationRule] { get }
     static func unmetRequirements(for input: String) -> [InputValidationRule]
     static func isValid(input: String) -> Bool
 }
