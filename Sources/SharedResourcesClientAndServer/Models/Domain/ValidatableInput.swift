@@ -46,4 +46,3 @@ public typealias CommunityResourceTitleInput = ValidatableInput<CommunityResourc
 public typealias CommunityResourceDescriptionInput = ValidatableInput<CommunityResourceDescriptionInputValidator>
 public typealias PostTitleInput = ValidatableInput<PostTitleInputValidator>
 public typealias PostBodyInput = ValidatableInput<PostBodyInputValidator>
-
