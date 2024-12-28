@@ -11,12 +11,13 @@ public enum DefaultField: InputField {
     public typealias Validator = DefaultInputValidator
     public static let fieldName: String = "Text"
     public static let maxCharacterCount: Int = .max
-    public static var shouldTrimWhileTapping: Bool = true
+    public static var shouldTrimWhileTapping: Bool = false
 }
 
 public enum DefaultInputValidator: InputValidator {
     public static let validationRules: [InputValidationRule] = [
         .minLength(1),
-        .maxLength(DefaultField.maxCharacterCount)
+        .maxLength(DefaultField.maxCharacterCount),
+        .onlyCommonCharacterSet
     ]
 }

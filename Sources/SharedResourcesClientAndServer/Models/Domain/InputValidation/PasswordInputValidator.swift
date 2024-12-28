@@ -21,6 +21,7 @@ public enum PasswordInputValidator: InputValidator {
         .containsDigit,
         .containsSpecialCharacter,
         .minLength(8),
-        .maxLength(PasswordField.maxCharacterCount)
+        .maxLength(PasswordField.maxCharacterCount),
+        .onlyCommonCharacterSet
     ]
 }

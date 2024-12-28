@@ -18,6 +18,6 @@ public enum CommunityResourceDescriptionInputValidator: InputValidator {
     public static let validationRules: [InputValidationRule] = [
         .minLength(1),
         .maxLength(CommunityResourceDescriptionField.maxCharacterCount),
-        .onlyUsernameCharacterSet
+        .onlyTitleCharacterSet
     ]
 }

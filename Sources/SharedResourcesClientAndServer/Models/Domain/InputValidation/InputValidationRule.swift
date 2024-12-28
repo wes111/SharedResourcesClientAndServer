@@ -19,11 +19,26 @@ public enum InputValidationRule: Hashable {
     case containsSpecialCharacter
     case onlyAlphanumeric
     case onlyUsernameCharacterSet
+    case onlyCommonCharacterSet
+    case onlyTitleCharacterSet
     case beginsWithAlphanumeric
     case beginsWithHttps
     
     private static let specialCharacterSet = CharacterSet(charactersIn: "@#$%^&+=_!~*()[]{}|;:,.<>?/\\")
     private static let usernameCharacterSet = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789._-")
+    
+    private static let commonCharacterSet: CharacterSet = {
+        var allowedSet = CharacterSet.alphanumerics // Letters and numbers
+        allowedSet.insert(charactersIn: " ") // Allow spaces
+        allowedSet.insert(charactersIn: "@#$%^&+=_!~*()[]{}|;:,.<>?/\\\"'") // Common special characters
+        return allowedSet
+    }()
+    
+    private static let titleCharacterSet: CharacterSet = {
+        var allowedSet = CharacterSet.alphanumerics // Allow letters and numbers
+        allowedSet.insert(charactersIn: " ") // Add spaces
+        return allowedSet
+    }()
 
     // Validation rule description.
     public var description: String {
@@ -36,10 +51,12 @@ public enum InputValidationRule: Hashable {
         case .containsDigit: "digit"
         case .containsSpecialCharacter: "special character"
         case .onlyUsernameCharacterSet: "contains only alphanumeric characters, dots, underscores, and hyphens"
+        case .onlyAlphanumeric: "contains only alphanumeric characters"
+        case .onlyCommonCharacterSet: "contains only common characters"
+        case .onlyTitleCharacterSet: "contains only title characters"
         case .beginsWithAlphanumeric: "begins with an alphanumeric character"
         case .beginsWithHttps: "begins with \"https://\""
         case .phoneNumberFormat: "Valid phone number format"
-        case .onlyAlphanumeric: "contains only alphanumeric characters"
         }
     }
     
@@ -88,6 +105,12 @@ public enum InputValidationRule: Hashable {
             
         case .onlyUsernameCharacterSet:
             return input.unicodeScalars.allSatisfy { Self.usernameCharacterSet.contains($0) }
+            
+        case .onlyCommonCharacterSet:
+            return input.unicodeScalars.allSatisfy { Self.commonCharacterSet.contains($0) }
+            
+        case .onlyTitleCharacterSet:
+            return input.unicodeScalars.allSatisfy { Self.titleCharacterSet.contains($0) }
             
         case .beginsWithAlphanumeric:
             if let firstCharacter = input.first {

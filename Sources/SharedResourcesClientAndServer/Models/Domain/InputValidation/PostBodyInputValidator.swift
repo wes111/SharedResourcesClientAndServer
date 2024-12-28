@@ -17,6 +17,6 @@ public enum PostBodyInputValidator: InputValidator {
     public static let validationRules: [InputValidationRule] = [
         .minLength(2),
         .maxLength(PostBodyField.maxCharacterCount),
-        .onlyUsernameCharacterSet
+        .onlyCommonCharacterSet
     ]
 }

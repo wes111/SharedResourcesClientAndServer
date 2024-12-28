@@ -9,7 +9,6 @@ import Foundation
 
 // MARK: - Phone Formatter
 public enum PhoneFormatter {
-    // TODO: Move to a dedicated PhoneFormatter?
     // https://stackoverflow.com/questions/32364055/formatting-phone-number-in-swift
     // mask example: `+X (XXX) XXX-XXXX`
     public static func format(with mask: String, phone: String) -> String {
