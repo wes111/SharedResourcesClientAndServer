@@ -7,14 +7,14 @@
 
 import Foundation
 
-public enum SortOrder: CaseIterable, Sendable {
+public enum SortOrderOption: CaseIterable, Sendable {
     case newest
     case oldest
     case topRated
     case lowRated
 }
 
-extension SortOrder: Identifiable {
+extension SortOrderOption: Identifiable {
     public var id: String {
         switch self {
         case .newest:

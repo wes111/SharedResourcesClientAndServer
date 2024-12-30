@@ -11,7 +11,7 @@ public struct PostFilters: Equatable, Sendable {
     public var approved: PostApprovedFilter
     public var archived: PostArchivedFilter
     public var categoriesFilter: PostCategory? // Posts can only belong to one category.
-    public var sortOrder: SortOrder
+    public var sortOrder: SortOrderOption
     public var tagsFilter: [CommunityTag] // Posts can have multiple tags.
     public var dateFilter: DateFilter
     
@@ -19,7 +19,7 @@ public struct PostFilters: Equatable, Sendable {
         approved: PostApprovedFilter = .approved,
         archived: PostArchivedFilter = .noFilter,
         categoriesFilter: PostCategory? = nil,
-        sortOrder: SortOrder = .topRated,
+        sortOrder: SortOrderOption = .topRated,
         tagsFilter: [CommunityTag] = [],
         dateFilter: DateFilter = .noFilter
     ) {
