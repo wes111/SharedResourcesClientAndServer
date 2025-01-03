@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "SharedResourcesClientAndServer",
     platforms: [
-        .iOS(.v16),
+        .iOS("18.0"),
         .macOS(.v11)
         ],
     products: [
@@ -16,6 +16,8 @@ let package = Package(
             targets: ["SharedResourcesClientAndServer"]),
     ], 
     dependencies: [
+        // Declare local package dependencies
+        .package(name: "SharedSwift", path: "Democracy/SharedSwift")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.

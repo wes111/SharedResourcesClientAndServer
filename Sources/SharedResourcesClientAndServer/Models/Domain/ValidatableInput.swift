@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SharedSwift
 
 public struct Link: Codable, Sendable, Hashable {
     public let value: URL

@@ -6,17 +6,14 @@
 //
 
 import Foundation
+import SharedSwift
 
-public enum PostBodyField: InputField {
-    public typealias Validator = PostBodyInputValidator
-    public static let fieldName: String = "Post Content"
-    public static let maxCharacterCount: Int = 500
-    public static var shouldTrimWhileTapping: Bool = false
-}
 public enum PostBodyInputValidator: InputValidator {
+    public static let maxCharacterCount: Int = 500
+    
     public static let validationRules: [InputValidationRule] = [
         .minLength(2),
-        .maxLength(PostBodyField.maxCharacterCount),
+        .maxLength(Self.maxCharacterCount),
         .onlyCommonCharacterSet
     ]
 }
