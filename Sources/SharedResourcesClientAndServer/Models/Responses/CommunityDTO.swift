@@ -45,7 +45,7 @@ public struct CommunityDTO: Decodable {
 }
 
 extension CommunityDTO: DomainConvertible {
-    public static var collection: Collection = .community
+    public static let collection: Collection = .community
     
     public func toDomain() -> Community {
         .init(

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum Collection: String {
+public enum Collection: String, Sendable {
     case comment
     case commentVote
     case community

@@ -13,7 +13,7 @@ public extension JSONEncoder {
         let encoder = JSONEncoder()
         encoder.dateEncodingStrategy = .custom { date, encoder in
             var container = encoder.singleValueContainer()
-            let dateString = ISO8601DateFormatter.sharedWithFractionalSeconds.string(from: date)
+            let dateString = DateFormatter.sharedWithFractionalSeconds.string(from: date)
             try container.encode(dateString)
         }
         return encoder

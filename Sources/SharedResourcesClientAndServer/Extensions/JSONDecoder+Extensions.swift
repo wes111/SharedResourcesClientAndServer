@@ -14,7 +14,7 @@ public extension JSONDecoder {
         decoder.dateDecodingStrategy = .custom { decoder in
             let container = try decoder.singleValueContainer()
             let dateString = try container.decode(String.self)
-            if let date = ISO8601DateFormatter.sharedWithFractionalSeconds.date(from: dateString) {
+            if let date = DateFormatter.sharedWithFractionalSeconds.date(from: dateString) {
                 return date
             } else {
                 throw DecodingError.dataCorruptedError(in: container, debugDescription: "Invalid date format")
